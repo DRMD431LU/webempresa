@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Inicio | La Caffettiera</title>
+    <title>{%block title%}Inicio{%endblock title%} | La Caffettiera</title>
     {%load static%}
     <!-- Bootstrap -->
     <link href="{%static 'core/vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
@@ -39,29 +39,29 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav mx-auto">
-            <li class="nav-item active px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="index.html">Inicio</a>
+            <li class="nav-item px-lg-4 {%if request.path == '/' %}active{%endif%}">
+              <a class="nav-link text-uppercase text-expanded" href="{%url 'home'%}">Inicio</a>
             </li>
-            <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="about.html">Historia</a>
+            <li class="nav-item px-lg-4 {%if request.path == '/about/' %}active{%endif%}">
+              <a class="nav-link text-uppercase text-expanded" href="{%url 'about'%}">Historia</a>
             </li>
-            <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="services.html">Servicios</a>
+            <li class="nav-item px-lg-4 {%if request.path == '/services' %}active{%endif%}">
+              <a class="nav-link text-uppercase text-expanded" href="{%url 'services'%}">Servicios</a>
             </li>
-            <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="store.html">Visítanos</a>
+            <li class="nav-item px-lg-4 {%if request.path == '/store/' %}active{%endif%}">
+              <a class="nav-link text-uppercase text-expanded" href="{%url 'store'%}">Visítanos</a>
             </li>
-            <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="contact.html">Contacto</a>
+            <li class="nav-item px-lg-4 {%if request.path == '/contact/' %}active{%endif%}">
+              <a class="nav-link text-uppercase text-expanded" href="{%url 'contact'%}">Contacto</a>
             </li>
-            <li class="nav-item px-lg-4">
-              <a class="nav-link text-uppercase text-expanded" href="blog.html">Blog</a>
+            <li class="nav-item px-lg-4 {%if request.path == '/blog/' %}active{%endif%}">
+              <a class="nav-link text-uppercase text-expanded" href="{%url 'blog'%}">Blog</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
-
+<!--contenido-->
 {%block content%} {%endblock content%}
 
     <!-- Pié de página -->
