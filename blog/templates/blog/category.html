@@ -2,7 +2,7 @@
 {%load static%}
 {%block title%}Historia{%endblock%}
 {%block content%}
-  {%for post in posts%}  
+  {%for post in categories.get_posts.all%}  
     <section class="page-section cta">
       <div class="container">
         <div class="row">
